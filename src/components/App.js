@@ -144,6 +144,7 @@ class App extends Component {
                 <Imagesgrid
                   images={imageData.hits}
                   savePicture={this.handleSaveImage}
+                  savedImages={this.state.saved}
                 />
               }
             </form>

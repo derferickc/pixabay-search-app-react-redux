@@ -6,7 +6,7 @@ class Imagesgrid extends Component {
   render() {
     return (
       <div className="">
-        {this.props.images.map((image) => (
+        {this.props.images.map((image, index) => (
           <Tile
             key={image.id}
             id={image.id}
@@ -15,6 +15,7 @@ class Imagesgrid extends Component {
             previewURL={image.previewURL}
             tags={image.tags}
             savePicture={this.props.savePicture}
+            savedImages={this.props.savedImages}
             />
         ))}
       </div>
