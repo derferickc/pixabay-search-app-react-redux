@@ -1,27 +1,21 @@
 import React, { Component } from "react"
 import { FaExternalLinkAlt } from 'react-icons/fa'
  
-class Saved extends Component {
-  constructor(props) {
-    super(props)
+export default function Saved (props) {
 
-    this.state = {
-    }
-  }
+  return (
+    <React.Fragment>
+      <h4>Saved</h4>
 
-  render() {
-    return (
-      <React.Fragment>
-        <h4>Saved</h4>
-
-        <p className="external-link">
-          <a href="" >
-            <span>{this.state.saved}</span><FaExternalLinkAlt color='#6610f2' size={15}/>
+      {props.savedImages.map((image) => (
+        <div className="external-link" key={image.id}>
+          <a href={image.previewURL}>
+            <span className="saved-id-wrapper">#{image.id}</span>
+            <FaExternalLinkAlt color='#6610f2' size={15}/>
           </a>
-        </p>
-      </React.Fragment>
-    );
-  }
+        </div>
+      ))}
+      
+    </React.Fragment>
+  );
 }
- 
-export default Saved;

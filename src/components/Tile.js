@@ -1,14 +1,14 @@
 import React from "react"
 import { FaStar, FaThumbsUp } from 'react-icons/fa'
  
-export default function Tile ({ id, favorites, likes, previewURL, tags, onSaveImage }) {
-  let tagsArr = tags.split(', ')
+export default function Tile (props) {
+  let tagsArr = props.tags.split(', ')
 
   return (
     <div className='tile-wrapper'>
       <div className="tile-image col-7">
-        <img src={previewURL} alt={id}/>
-        <div className="overlay" onClick={() => onSaveImage(id, previewURL)}>Save</div>
+        <img src={props.previewURL} alt={props.id}/>
+        <div className="overlay" onClick={() => props.savePicture(props.id, props.previewURL)}>Save</div>
       </div>
 
       <div className="col-5 tile-tags-likes text-left">
@@ -20,12 +20,12 @@ export default function Tile ({ id, favorites, likes, previewURL, tags, onSaveIm
 
         <div className="tile-likes">
           <span className='tile-like'>
-            <strong>{likes}</strong>
+            <strong>{props.likes}</strong>
             <FaThumbsUp color='#000000' size={15}/>
           </span>
 
           <span className='tile-favorites'>
-            <strong>{favorites}</strong>
+            <strong>{props.favorites}</strong>
             <FaStar color='#000000' size={15}/>
           </span>
         </div>

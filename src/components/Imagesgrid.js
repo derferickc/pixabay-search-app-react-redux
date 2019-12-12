@@ -5,25 +5,6 @@ import Tile from './Tile'
 class Imagesgrid extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      saved: []
-    }
-
-    this.handleSaveImage = this.handleSaveImage.bind(this)
-  }
-
-  handleSaveImage(id, previewURL) {
-    console.log(id + ' ' + previewURL)
-
-    this.setState((currentState) => {
-      return {
-        saved: currentState.saved.concat([{
-          id,
-          previewURL
-        }])
-      }
-    })
   }
 
   render() {
@@ -37,7 +18,7 @@ class Imagesgrid extends Component {
             favorites={image.favorites}
             previewURL={image.previewURL}
             tags={image.tags}
-            onSaveImage={this.handleSaveImage.bind(this)}
+            savePicture={this.props.savePicture}
             />
         ))}
       </div>

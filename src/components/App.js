@@ -4,6 +4,9 @@ import Imagesgrid from './Imagesgrid'
 import '../App.scss'
 
 class App extends Component {
+
+  formRef = React.createRef();
+
   constructor(props) {
     super(props)
 
@@ -21,6 +24,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleFilterChange = this.handleFilterChange.bind(this)
+    this.handleSaveImage = this.handleSaveImage.bind(this)
   }
 
   handleSubmit(event) {
@@ -31,7 +35,7 @@ class App extends Component {
     fetch(`${this.state.apiUrl}/?key=${this.state.apiKey}&q=${searchTextAdjust}&image_type=photo&per_page=${this.state.amount}&safesearch=true&category=${this.state.filter}`)
       .then( response => response.json())
       .then(
-        // handle the result
+        // Handle the result
         (result) => {
           this.setState({
             imageData : result
@@ -40,7 +44,7 @@ class App extends Component {
         // Handle error 
         (error) => {
           this.setState({
-            error: ''
+            error: "No matching images could be found"
           })
         },
       )
@@ -56,6 +60,34 @@ class App extends Component {
     this.setState({
       filter: event.target.value
     })
+  }
+
+  handleSaveImage(id, previewURL) {
+    // Do not search state for id if there is only one saved id
+    if(this.state.saved.length > 0) {
+      const indexOfID = this.state.saved.findIndex((saved) => saved.id === id)
+      // Check to see if ID already exists in the saved state
+      if(indexOfID == -1) {
+        this.setState((currentState) => {
+          return {
+            saved: currentState.saved.concat([{
+              id,
+              previewURL
+            }])
+          }
+        })
+      }
+    // if there are 0 saved items in the state, immediately add to saved state
+    } else {
+      this.setState((currentState) => {
+        return {
+          saved: currentState.saved.concat([{
+            id,
+            previewURL
+          }])
+        }
+      })
+    }
   }
 
   render() {
@@ -104,12 +136,14 @@ class App extends Component {
               {imageData &&
                 <Imagesgrid
                   images={imageData.hits}
+                  savePicture={this.handleSaveImage}
                 />
               }
-          </form>
+            </form>
           </div>
-          <div className="col-4 right-wrapper text-center">
-            <Saved savedpictures={this.state.saved}/>
+
+          <div className="col-4 right-wrapper text-left">
+            <Saved savedImages={this.state.saved}/>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 .app-wrapper {
   margin: 30px auto;
   .left-wrapper {
+    padding: 0 25px;
     .keyword-form {
       .form-input {
         border: 1px solid #c2c2d6;
@@ -77,5 +78,20 @@
   .right-wrapper {
     border-left: 1px solid #c2c2d6;
     margin-top: 15px;
+    padding: 0 25px;
+    h4 {
+      margin-bottom: 30px;
+    }
+    .external-link {
+      margin-bottom: 15px;
+      a {
+        text-decoration: none;
+        color: #6610f2;
+        .saved-id-wrapper {
+          margin-right: 15px;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
