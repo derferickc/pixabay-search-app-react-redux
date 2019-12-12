@@ -8,6 +8,17 @@
         color: #000000;
         min-height: 50px;
       }
+      .select-filter-wrapper {
+        margin-top: 30px;
+        label {
+          padding: 0;
+          color: #000000;
+          .select-wrapper {
+            height: 30px;
+            border: 1px solid #c2c2d6;
+          }
+        }
+      }
       .submit-button {
         background-color: #6610f2;
         color: #ffffff;
@@ -15,7 +26,7 @@
         font-weight: bold;
         border: none;
         padding: 13px 20px;
-        min-width: 200px;
+        width: 100%;
         border-radius: 10px;
         margin-top: 30px;
       }
@@ -29,6 +40,11 @@
         flex-direction: column;
         img {
           width: 100%;
+        }
+        .overlay {
+          color: #ffffff;
+          font-weight: bold;
+          background-color: #ff6699;
         }
       }
       .tile-tags-likes {
