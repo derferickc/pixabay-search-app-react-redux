@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import Tile from './Tile'
  
-class Imagesgrid extends Component {
+class ImagesGrid extends Component {
 
   render() {
     return (
-      <div className="">
-        {this.props.images.map((image, index) => (
+      <div>
+        {this.props.images.map((image) => (
           <Tile
             key={image.id}
             id={image.id}
@@ -23,4 +23,4 @@ class Imagesgrid extends Component {
   }
 }
  
-export default Imagesgrid;
+export default ImagesGrid;
