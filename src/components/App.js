@@ -33,7 +33,7 @@ class App extends Component {
     let searchTextAdjust = this.state.searchText.split(' ').join('+').toLowerCase();
 
     fetch(`${this.state.apiUrl}/?key=${this.state.apiKey}&q=${searchTextAdjust}&image_type=photo&per_page=${this.state.amount}&safesearch=true&category=${this.state.filter}`)
-      .then( response => response.json())
+      .then(response => response.json())
       .then(
         // Handle the result
         (result) => {
@@ -67,13 +67,20 @@ class App extends Component {
     if(this.state.saved.length > 0) {
       const indexOfID = this.state.saved.findIndex((saved) => saved.id === id)
       // Check to see if ID already exists in the saved state
-      if(indexOfID == -1) {
+      if(indexOfID === -1) {
         this.setState((currentState) => {
           return {
             saved: currentState.saved.concat([{
               id,
               previewURL
             }])
+          }
+        })
+      // If the id already exists, filter out and return the array object
+      } else {
+        this.setState((currentState) => {
+          return {
+            saved: currentState.saved.filter((saved) => saved.id !== id)
           }
         })
       }

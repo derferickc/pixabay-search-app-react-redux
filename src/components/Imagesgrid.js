@@ -1,11 +1,7 @@
 import React, { Component } from "react"
-import { FaExternalLinkAlt } from 'react-icons/fa'
 import Tile from './Tile'
  
 class Imagesgrid extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
