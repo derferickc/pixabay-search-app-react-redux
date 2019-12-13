@@ -1,5 +1,5 @@
 <a href="https://pixabay-search-app.web.app/">
-	<img src="https://cdn.pixabay.com/photo/2017/01/17/14/44/pixabay-1987090_960_720.png" title="pixabay-logo" alt="pixabay-logo">
+	<img src="https://cdn.pixabay.com/photo/2017/01/17/14/44/pixabay-1987090_960_720.png" title="pixabay-logo" alt="pixabay-logo" style="max-width: 200px">
 </a>
 
 # Pixabay Search App
@@ -9,23 +9,8 @@
 > Technology used: React, fetch, API, HTML5, SASS, CSS3 ES6, React-Icons, Firebase
 
 <a href="https://pixabay-search-app.web.app/">
-	<img src="https://firebasestorage.googleapis.com/v0/b/pixabay-search-app.appspot.com/o/search.png?alt=media&token=9d6c43d6-5874-4da1-9cbc-a2346ee0ed5a" title="screenshot" alt="screenshot">
+	<img src="https://firebasestorage.googleapis.com/v0/b/pixabay-search-app.appspot.com/o/search-screenshot.png?alt=media&token=17935dc4-ff8f-4f76-b354-1b9235d69dc5" title="screenshot" alt="screenshot">
 </a>
-
-## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
-
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
-
-
----
 
 ## Installation / Run Commands
 
