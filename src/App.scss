@@ -1,3 +1,8 @@
+$orange: #ff944d;
+$pink: #ff6699;
+$purple: #6610f2;
+$teal: #00b3b3;
+
 .app-wrapper {
   margin: 30px auto;
   .left-wrapper {
@@ -21,7 +26,7 @@
         }
       }
       .submit-button {
-        background-color: #6610f2;
+        background-color: $purple;
         color: #ffffff;
         text-decoration: none;
         font-weight: bold;
@@ -45,7 +50,7 @@
         .overlay-pink {
           color: #ffffff;
           font-weight: bold;
-          background-color: #ff6699;
+          background-color: $pink;
           position: absolute;
           bottom: 0;
           width: 100%;
@@ -56,7 +61,7 @@
         .overlay-orange {
           color: #ffffff;
           font-weight: bold;
-          background-color: #ff944d;
+          background-color: $orange;
           position: absolute;
           bottom: 0;
           width: 100%;
@@ -71,7 +76,7 @@
         flex-direction: column;
         .tile-tags {
           .tag-label {
-            background-color: #00b3b3;
+            background-color: $teal;
             color: #ffffff;
             text-align: center;
             padding: 2px 15px;
@@ -103,7 +108,7 @@
       margin-bottom: 15px;
       a {
         text-decoration: none;
-        color: #6610f2;
+        color: $purple;
         .saved-id-wrapper {
           margin-right: 15px;
           font-weight: bold;
