@@ -1,5 +1,5 @@
 <a href="https://pixabay-search-app.web.app/">
-	<img src="https://cdn.pixabay.com/photo/2017/01/17/14/44/pixabay-1987090_960_720.png" title="pixabay-logo" alt="pixabay-logo" style="max-width: 200px">
+	<img src="https://cdn.pixabay.com/photo/2017/01/17/14/44/pixabay-1987090_960_720.png" title="pixabay-logo" alt="pixabay-logo" width="200">
 </a>
 
 # Pixabay Search App
