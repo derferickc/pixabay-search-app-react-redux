@@ -5,16 +5,12 @@ import '../App.scss'
 
 class App extends Component {
 
-  formRef = React.createRef();
-
   constructor(props) {
     super(props)
 
     this.state = {
       searchText: '',
       amount: 10,
-      apiUrl: 'https://pixabay.com/api',
-      apiKey: '13136421-266c28a6d61717bc2e4e6a83e',
       imageData: '',
       error: null,
       filter: '',
@@ -30,9 +26,12 @@ class App extends Component {
   handleSubmit(event) {
     event.preventDefault()
 
+    const apiUrl = 'https://pixabay.com/api'
+    const apiKey = '13136421-266c28a6d61717bc2e4e6a83e'
+
     let searchTextAdjust = this.state.searchText.split(' ').join('+').toLowerCase();
 
-    fetch(`${this.state.apiUrl}/?key=${this.state.apiKey}&q=${searchTextAdjust}&image_type=photo&per_page=${this.state.amount}&safesearch=true&category=${this.state.filter}`)
+    fetch(`${apiUrl}/?key=${apiKey}&q=${searchTextAdjust}&image_type=photo&per_page=${this.state.amount}&safesearch=true&category=${this.state.filter}`)
       .then(response => response.json())
       .then(
         // Handle the result
