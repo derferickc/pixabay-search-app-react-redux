@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import Saved from './Saved'
-import ImagesGrid from './ImagesGrid'
+import Imagesgrid from './Imagesgrid'
 import '../App.scss'
 
 class App extends Component {
@@ -140,7 +140,7 @@ class App extends Component {
               {error && <p className='center-text error'>{error}</p>}
 
               {imageData &&
-                <ImagesGrid
+                <Imagesgrid
                   images={imageData.hits}
                   savePicture={this.handleSaveImage}
                   savedImages={this.state.saved}
