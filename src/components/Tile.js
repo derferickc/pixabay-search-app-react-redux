@@ -3,17 +3,20 @@ import { FaStar, FaThumbsUp } from 'react-icons/fa'
  
 export default function Tile (props) {
   let tagsArr = props.tags.split(', ')
-  const indexOfID = props.savedImages.findIndex((saved) => saved.id === props.id)
+  // const indexOfID = props.savedImages.findIndex((saved) => saved.id === props.id)
 
   return (
     <div className='tile-wrapper'>
       <div className="tile-image col-7">
         <div className="tile-inner">
           <img src={props.previewURL} alt={props.id}/>
-          {/* if the id of the tile doesn't exist in saved items array, show pink, else show orange */}
+          {/* if the id of the tile doesn't exist in saved items array, show pink, else show orange 
           {indexOfID === -1
             ? <div className="overlay-pink" onClick={() => props.savePicture(props.id, props.previewURL)}>Save</div>
             : <div className="overlay-orange" onClick={() => props.savePicture(props.id, props.previewURL)}>Saved</div>}
+          */}
+
+          <div className="overlay-pink" onClick={() => props.savePicture(props.id, props.previewURL)}>Save</div>
         </div>
       </div>
 

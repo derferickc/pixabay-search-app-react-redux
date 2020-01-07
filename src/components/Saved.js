@@ -1,25 +1,39 @@
-import React from "react"
+import React, { Component } from "react"
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import { fetchSaved } from '../actions/saveActions'
+import { connect } from 'react-redux'
  
-export default function Saved (props) {
+class Saved extends Component {
 
-  return (
-    <React.Fragment>
-      <h4>Saved</h4>
+  componentDidMount() {
+    this.props.fetchSaved();
+  }
 
-      {props.savedImages.length <= 0 &&
-        <span>No saved images</span>
-      }
+  render() {
+    return (
+      <React.Fragment>
+        <h4>Saved</h4>
 
-      {props.savedImages.map((image) => (
-        <div className="external-link" key={image.id}>
-          <a href={image.previewURL}>
-            <span className="saved-id-wrapper">#{image.id}</span>
-            <FaExternalLinkAlt color='#6610f2' size={15}/>
-          </a>
-        </div>
-      ))}
-      
-    </React.Fragment>
-  );
+        {/* {props.savedImages.length <= 0 &&
+          <span>No saved images</span>
+        } */}
+
+        {/* {this.props.savedImages.map((image) => (
+          <div className="external-link" key={image.id}>
+            <a href={image.previewURL}>
+              <span className="saved-id-wrapper">#{image.id}</span>
+              <FaExternalLinkAlt color='#6610f2' size={15}/>
+            </a>
+          </div>
+        ))} */}
+        
+      </React.Fragment>
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  savedImages: state.saved.savedImages,
+});
+
+export default connect(mapStateToProps, { fetchSaved })(Saved);
