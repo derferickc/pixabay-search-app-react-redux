@@ -14,8 +14,6 @@ class ImagesGrid extends Component {
             favorites={image.favorites}
             previewURL={image.previewURL}
             tags={image.tags}
-            savePicture={this.props.savePicture}
-            savedImages={this.props.savedImages}
             />
         ))}
       </div>

@@ -17,7 +17,6 @@ class Main extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleFilterChange = this.handleFilterChange.bind(this)
-    // this.handleSaveImage = this.handleSaveImage.bind(this)
   }
 
   handleSubmit(event) {
@@ -105,8 +104,7 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-  imageData: state.posts.imageData,
-  error: state.error
+  imageData: state.search.imageData,
 });
 
 export default connect(mapStateToProps, { fetchImages })(Main);

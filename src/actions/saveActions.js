@@ -1,19 +1,25 @@
 import { SAVE_IMAGE, REMOVE_IMAGE, FETCH_SAVED } from './types';
 
-export function saveImage() {
+export function saveImage(id, previewURL) {
   return ({
-    type: SAVE_IMAGE
+    type: SAVE_IMAGE,
+    payload: {
+      id,
+      previewURL
+    }
   });
 }
 
-export function removeImage() {
+export function removeImage(id) {
   return ({
-    type: REMOVE_IMAGE
+    type: REMOVE_IMAGE,
+    payload: {
+      id
+    }
   });
 }
 
 export function fetchSaved() {
-  console.log('action save')
   return ({
     type: FETCH_SAVED
   });

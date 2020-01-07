@@ -1,16 +1,16 @@
 import { SAVE_IMAGE, REMOVE_IMAGE, FETCH_SAVED } from '../actions/types';
 
-const initialState = [{id: 801826, previewURL: "https://cdn.pixabay.com/photo/2015/06/08/15/02/pug-801826_150.jpg"}]
+const initialState = []
 
 export default function(state = initialState, action) {
 	switch (action.type) {
 		case SAVE_IMAGE:
-			return [...state, action.payload]
+			return state.concat([{
+				id: action.payload.id,
+				previewURL: action.payload.previewURL
+			}])
 		case REMOVE_IMAGE:
-			return [...state, action.payload]
-		case FETCH_SAVED:
-			console.log(state + " save reducer")
-			return state
+			return state.filter((image) => image.id !== action.payload.id)
 		default: 
 			return state;
 	}

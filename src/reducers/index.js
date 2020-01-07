@@ -3,6 +3,6 @@ import searchReducer from './searchReducer'
 import saveReducer from './saveReducer'
 
 export default combineReducers({
-	posts: searchReducer,
+	search: searchReducer,
 	saved: saveReducer
 })
