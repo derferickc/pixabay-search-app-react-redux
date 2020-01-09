@@ -38,6 +38,10 @@ $teal: #00b3b3;
       }
     }
 
+    .error {
+      margin: 30px auto;
+    }
+
     .tile-wrapper {
       margin-top: 30px;
       display: flex;
@@ -86,7 +90,6 @@ $teal: #00b3b3;
           }
         }
         .tile-likes {
-          justify-content: flex-end;
         }
         .tile-favorites {
           margin-left: 30px;

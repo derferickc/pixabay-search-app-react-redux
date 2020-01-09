@@ -1,11 +1,11 @@
 import { SAVE_IMAGE, REMOVE_IMAGE, FETCH_SAVED } from './types';
 
-export function saveImage(id, previewURL) {
+export function saveImage(id, largeImageURL) {
   return ({
     type: SAVE_IMAGE,
     payload: {
       id,
-      previewURL
+      largeImageURL
     }
   });
 }

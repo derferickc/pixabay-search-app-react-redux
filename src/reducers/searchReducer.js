@@ -1,7 +1,8 @@
-import { FETCH_IMAGES } from '../actions/types';
+import { FETCH_IMAGES, SHOW_ERROR } from '../actions/types';
 
 const initialState = {
-	imageData: ''
+	imageData: '',
+	errors: '',
 }
 
 export default function(state = initialState, action) {
@@ -10,6 +11,11 @@ export default function(state = initialState, action) {
 			return {
 				...state,
 				imageData: action.payload
+			}
+		case SHOW_ERROR:
+			return {
+				imageData: '',
+				errors: action.payload
 			}
 		default: 
 			return state;

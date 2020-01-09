@@ -7,7 +7,7 @@ export default function(state = initialState, action) {
 		case SAVE_IMAGE:
 			return state.concat([{
 				id: action.payload.id,
-				previewURL: action.payload.previewURL
+				largeImageURL: action.payload.largeImageURL
 			}])
 		case REMOVE_IMAGE:
 			return state.filter((image) => image.id !== action.payload.id)

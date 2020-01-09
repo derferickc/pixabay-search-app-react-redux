@@ -12,8 +12,8 @@ class Tile extends Component {
     this.handleSaveImage = this.handleSaveImage.bind(this)
   }
 
-  handleSaveImage(id, previewURL) {
-    this.props.saveImage(id, previewURL)
+  handleSaveImage(id, largeImageURL) {
+    this.props.saveImage(id, largeImageURL)
   }
 
   handleRemoveImage(id) {
@@ -31,7 +31,7 @@ class Tile extends Component {
             <img src={this.props.previewURL} alt={this.props.id}/>
             {/* if the id of the tile doesn't exist in saved items array, show pink, else show orange  */}
             {indexOfID === -1
-              ? <div className="overlay-pink" onClick={() => this.handleSaveImage(this.props.id, this.props.previewURL)}>Save</div>
+              ? <div className="overlay-pink" onClick={() => this.handleSaveImage(this.props.id, this.props.largeImageURL)}>Save</div>
               : <div className="overlay-orange" onClick={() => this.handleRemoveImage(this.props.id)}>Saved</div>}
           </div>
         </div>

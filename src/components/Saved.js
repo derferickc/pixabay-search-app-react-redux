@@ -19,7 +19,7 @@ class Saved extends Component {
 
         {savedImages.map((image) => (
           <div className="external-link" key={image.id}>
-            <a href={image.previewURL}>
+            <a href={image.largeImageURL} target='_blank' rel='noopener noreferrer'>
               <span className="saved-id-wrapper">#{image.id}</span>
               <FaExternalLinkAlt color='#6610f2' size={15}/>
             </a>

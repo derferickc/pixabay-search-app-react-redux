@@ -85,7 +85,9 @@ class Main extends Component {
                 Search
               </button>
 
-              {this.props.error && <p className='center-text error'>{this.props.error}</p>}
+              {this.props.errors &&
+                <p className='center-text error'>{this.props.errors}</p>
+              }
 
               {this.props.imageData &&
                 <Imagesgrid images={this.props.imageData.hits}
@@ -105,6 +107,7 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
   imageData: state.search.imageData,
+  errors: state.search.errors
 });
 
 export default connect(mapStateToProps, { fetchImages })(Main);

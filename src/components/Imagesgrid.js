@@ -13,6 +13,7 @@ class ImagesGrid extends Component {
             likes={image.likes}
             favorites={image.favorites}
             previewURL={image.previewURL}
+            largeImageURL={image.largeImageURL}
             tags={image.tags}
             />
         ))}
