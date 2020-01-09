@@ -33,9 +33,16 @@ class Main extends Component {
   }
 
   handleChange(event) {
-    this.setState({
-      searchText: event.target.value
-    })
+    if(event.target.value === '') {
+      this.setState({
+        searchText: event.target.value,
+        filter: ''
+      })
+    } else {
+      this.setState({
+        searchText: event.target.value
+      })
+    }
   }
 
   handleFilterChange(event) {
