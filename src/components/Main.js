@@ -46,9 +46,16 @@ class Main extends Component {
   }
 
   handleFilterChange(event) {
+    const post = {
+      searchText: this.state.searchText,
+      filter: event.target.value
+    }
+
     this.setState({
       filter: event.target.value
     })
+
+    this.props.fetchImages(post);
   }
 
   render() {

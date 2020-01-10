@@ -1,23 +1,22 @@
 import React, { Component } from "react"
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { fetchSaved } from '../actions/saveActions'
 import { connect } from 'react-redux'
  
 class Saved extends Component {
 
   render() {
-    const { savedImages } = this.props
+    const { saved } = this.props
 
     return (
       <React.Fragment>
         <h4>Saved</h4>
 
-        {!savedImages.length
+        {!saved.length
           ? <span>No saved images</span>
           : null
         }
 
-        {savedImages.map((image) => (
+        {saved.map((image) => (
           <div className="external-link" key={image.id}>
             <a href={image.largeImageURL} target='_blank' rel='noopener noreferrer'>
               <span className="saved-id-wrapper">#{image.id}</span>
@@ -32,7 +31,7 @@ class Saved extends Component {
 }
 
 const mapStateToProps = state => ({
-  savedImages: state.saved
+  saved: state.saved
 });
 
-export default connect(mapStateToProps, { fetchSaved })(Saved);
+export default connect(mapStateToProps)(Saved);

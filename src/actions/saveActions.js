@@ -1,4 +1,4 @@
-import { SAVE_IMAGE, REMOVE_IMAGE, FETCH_SAVED } from './types';
+import { SAVE_IMAGE, REMOVE_IMAGE } from './types';
 
 export function saveImage(id, largeImageURL) {
   return ({
@@ -16,11 +16,5 @@ export function removeImage(id) {
     payload: {
       id
     }
-  });
-}
-
-export function fetchSaved() {
-  return ({
-    type: FETCH_SAVED
   });
 }

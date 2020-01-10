@@ -1,4 +1,4 @@
-import { SAVE_IMAGE, REMOVE_IMAGE, FETCH_SAVED } from '../actions/types';
+import { SAVE_IMAGE, REMOVE_IMAGE } from '../actions/types';
 
 const initialState = []
 
