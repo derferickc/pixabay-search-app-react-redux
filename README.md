@@ -6,7 +6,7 @@
 
 > A simple application that uses the Pixabay API to search for images based on keywords, filters, and gives the user the ability to save images to their liking for easy browsing.
 
-> Technology used: React, Redux, fetch, API, HTML5, SASS, CSS3 ES6, React-Icons, Firebase
+> Technology used: React, Redux, fetch, local storage, API, HTML5, SASS, CSS3 ES6, React-Icons, Firebase
 
 <a href="https://pixabay-search-app.web.app/">
 	<img src="https://firebasestorage.googleapis.com/v0/b/pixabay-search-app.appspot.com/o/search-screenshot.png?alt=media&token=17935dc4-ff8f-4f76-b354-1b9235d69dc5" title="screenshot" alt="screenshot">
